@@ -3,13 +3,6 @@ import uuid
 import sys
 import json
 
-# NOTES FOR DAN
-    # 1. I'm not sure if I'm supposed to also update the subnet based on the CIDR, still de-noobing myself on networking
-    # 2. It will drop out gracefully if you have more MACs in the input file than can fit in the IP space given by the CIDR
-    # 3. This may need more error handling but I'm not sure how stable it needs to be as a simple tool
-    # 4. It currently just writes all the hardware_data.jsons to stdout but would be trivial to write to a set of numbered files
-    # 5. It's in Python3 which may not be useful. If not, I'll chalk this up to a fun exercise.
-
 def write_hardware_json(ip_address, gateway, netmask, MAC, uuid):
 
     ##### ip
