@@ -1,4 +1,8 @@
-# USAGE
+# Goal
+
+We need to create hardware.json files for hypothetical Tinkerbell workers with realistic data that observe IP allocation rules based on a given CIDR
+
+# Usage
 
 The script expects the following parameters
 1. gateway
