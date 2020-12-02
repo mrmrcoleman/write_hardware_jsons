@@ -12,7 +12,7 @@ _The repository contains an example input file called MACs.txt_
 
 - Example input with enough IP space to create all hardware_jsons
 
-` ./write_hardware_jsons.py 192.168.1.1 255.255.255.248 192.168.1.0/28 ./MACS.txt`
+`python3 ./write_hardware_jsons.py 192.168.1.1 255.255.255.248 192.168.1.0/28 ./MACS.txt`
 
 - Output
 
@@ -244,3 +244,4 @@ address out of range
 4. It currently just writes all the hardware_data.json data to stdout but would be trivial to write to a set of numbered files
 5. It's in Python3 which may not be useful. If not, I'll chalk this up to a fun exercise.
 6. Not sure how to make the json outputs pretty print in Github, but they look nice on the command line!
+7. All the packages used are core
