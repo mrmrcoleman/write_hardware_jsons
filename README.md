@@ -8,7 +8,7 @@ The script expects the following parameters
 
 # Examples
 
-## The repository contains an example newline separated file called MACs.txt
+_The repository contains an example newline separated file called MACs.txt_
 
 - Example input with enough IP space to create all hardware_jsons
 
