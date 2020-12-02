@@ -1,20 +1,14 @@
-# NOTES
-1. I'm not sure if I'm supposed to also update the subnet based on the CIDR, still de-noobing myself on networking
-2. It will drop out gracefully if you have more MACs in the input file than can fit in the IP space given by the CIDR
-3. This may need more error handling but I'm not sure how stable it needs to be as a simple tool
-4. It currently just writes all the hardware_data.json data to stdout but would be trivial to write to a set of numbered files
-5. It's in Python3 which may not be useful. If not, I'll chalk this up to a fun exercise.
-
 # USAGE
 
-- The repository contains an example newline separated file called MACs.txt
-- The script expects the following parameters
+The script expects the following parameters
 1. gateway
 2. netmask
 3. CIDR string
 4. MAC address file
 
 # Examples
+
+## The repository contains an example newline separated file called MACs.txt
 
 - Example input with enough IP space to create all hardware_jsons
 
@@ -242,3 +236,11 @@
 Cannot allocate IP for 08:00:27:00:00:03 on line 3. Insufficient IP space in range: 192.168.1.0/31
 address out of range
 `
+
+# NOTES
+1. I'm not sure if I'm supposed to also update the subnet based on the CIDR, still de-noobing myself on networking
+2. It will drop out gracefully if you have more MACs in the input file than can fit in the IP space given by the CIDR
+3. This may need more error handling but I'm not sure how stable it needs to be as a simple tool
+4. It currently just writes all the hardware_data.json data to stdout but would be trivial to write to a set of numbered files
+5. It's in Python3 which may not be useful. If not, I'll chalk this up to a fun exercise.
+6. Not sure how to make the json outputs pretty print in Github, but they look nice on the command line!
