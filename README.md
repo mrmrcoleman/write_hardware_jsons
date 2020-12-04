@@ -10,6 +10,16 @@ The script expects the following parameters
 3. CIDR string
 4. MAC address file
 
+Use this to pipe each hardware_json into a separate file:
+
+(_NOTE: Run it to stdout first to check there are no errors as the following command assumes a fixed number of lines per hardware_json and the error output will break it. I need to add an option in the script to output to files to get around this and so it can later deal with different schemas._)
+
+`mkdir output_files
+python3 ./write_hardware_jsons.py 192.168.1.1 255.255.255.248 192.168.1.0/28 ./MACS.txt | split -l 30 - ./output_files/hardware_data-`
+
+# NOTES
+1. It will drop out gracefully if you have more MACs in the input file than can fit in the IP space given by the CIDR as you can see in the second example
+
 # Examples
 
 _The repository contains an example input file called MACs.txt_
@@ -239,13 +249,3 @@ _The repository contains an example input file called MACs.txt_
 }
 Cannot allocate IP for 08:00:27:00:00:03 on line 3. Insufficient IP space in range: 192.168.1.0/31
 address out of range
-`
-
-# NOTES
-1. I'm not sure if I'm supposed to also update the subnet based on the CIDR
-2. It will drop out gracefully if you have more MACs in the input file than can fit in the IP space given by the CIDR as you can see in the second example
-3. This may need more error handling but I'm not sure how stable it needs to be as a simple tool
-4. It currently just writes all the hardware_data.json data to stdout but would be trivial to write to a set of numbered files
-5. It's in Python3 which may not be useful. If not, I'll chalk this up to a fun exercise.
-6. Not sure how to make the json outputs pretty print in Github, but they look nice on the command line!
-7. All the packages used are core
