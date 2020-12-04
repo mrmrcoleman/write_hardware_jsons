@@ -12,7 +12,7 @@ The script expects the following parameters
 
 Use this to pipe each hardware_json into a separate file:
 
-(_NOTE: Run it to stdout first to check there are no errors as the following command assumes a fixed number of lines per hardware_json and the error output will break it. I need to add an option in the script to output to files to get around this and so it can later deal with different schemas._)
+(_NOTE: Run it to stdout first to check there are no errors as the following command assumes a fixed number of lines per hardware_json and the error output will break it. I need to add an option in the script to output to files to get around this so it can later deal with different schemas._)
 
 `mkdir output_files
 python3 ./write_hardware_jsons.py 192.168.1.1 255.255.255.248 192.168.1.0/28 ./MACS.txt | split -l 30 - ./output_files/hardware_data-`
