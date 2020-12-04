@@ -1,6 +1,6 @@
 # Goal
 
-We need to create hardware.json files for hypothetical Tinkerbell workers with realistic data that observe IP allocation rules based on a given CIDR
+For testing purposes we often need to create hardware_data files with realistic data that have unique IP addresses based on a given CIDR string.
 
 # Usage
 
