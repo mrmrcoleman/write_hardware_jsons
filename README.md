@@ -28,7 +28,7 @@ _The repository contains an example input file called MACs.txt_
 
 - Example input with enough IP space to create all hardware_jsons
 
-`python3 ./write_hardware_jsons.py 192.168.1.1 255.255.255.248 192.168.1.0/28 ./MACS.txt`
+`python3 ./write_hardware_jsons.py 192.168.1.1 255.255.255.0 192.168.1.0/28 ./MACS.txt`
 
 - Output
 
