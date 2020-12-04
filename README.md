@@ -1,6 +1,6 @@
 # Goal
 
-For testing purposes we often need to create hardware_data files with realistic data that have unique IP addresses based on a given CIDR string.
+For testing purposes we often need to create hardware_data files with realistic data that have unique IP addresses based on a given CIDR string and unique MAC addresses.
 
 # Usage
 
