@@ -17,7 +17,7 @@ Use this to pipe each hardware_json into a separate file:
 `mkdir output_files`
 
 
-`python3 ./write_hardware_jsons.py 192.168.1.1 255.255.255.248 192.168.1.0/28 ./MACS.txt | split -l 30 - ./output_files/hardware_data-`
+`python3 ./write_hardware_jsons.py 192.168.1.1 255.255.255.0 192.168.1.0/28 ./MACS.txt | split -l 30 - ./output_files/hardware_data-`
 
 # NOTES
 1. It will drop out gracefully if you have more MACs in the input file than can fit in the IP space given by the CIDR as you can see in the second example
