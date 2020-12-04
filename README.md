@@ -5,10 +5,10 @@ For testing purposes we often need to create hardware_data files with realistic 
 # Usage
 
 The script expects the following parameters
-1. gateway            e.g. 192.168.1.1
-2. netmask            e.g. 255.255.255.0
-3. CIDR string        e.g. 192.168.1.0/28
-4. MAC address file   - A file containing MAC addresses separated by newlines
+1. gateway (e.g. 192.168.1.1)
+2. netmask (e.g. 255.255.255.0)
+3. CIDR string (e.g. 192.168.1.0/28)
+4. MAC address file (A file containing MAC addresses separated by newlines)
 
 Use this to pipe each hardware_json into a separate file:
 
