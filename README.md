@@ -31,7 +31,8 @@ _The repository contains an example input file called MACs.txt_
 
 - Output
 
-`{
+```json
+{
   "id": "0dd32a37-7c94-430d-abbe-18ae6686e5cf",
   "metadata": {
     "facility": {
@@ -180,7 +181,7 @@ _The repository contains an example input file called MACs.txt_
       }
     ]
   }
-}`
+}```
 
 - Example input without enough IP space to create all hardware_jsons
 
