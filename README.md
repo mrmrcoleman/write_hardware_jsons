@@ -188,7 +188,8 @@ _The repository contains an example input file called MACs.txt_
 
 - Output
 
-`{
+```json
+{
   "id": "1654a1f1-aa57-4574-9c3e-b743b2f52a24",
   "metadata": {
     "facility": {
@@ -249,4 +250,4 @@ _The repository contains an example input file called MACs.txt_
   }
 }
 Cannot allocate IP for 08:00:27:00:00:03 on line 3. Insufficient IP space in range: 192.168.1.0/31
-address out of range`
+address out of range```
