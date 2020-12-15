@@ -181,7 +181,8 @@ _The repository contains an example input file called MACs.txt_
       }
     ]
   }
-}```
+}
+```
 
 - Example input without enough IP space to create all hardware_jsons
 
@@ -251,4 +252,5 @@ _The repository contains an example input file called MACs.txt_
   }
 }
 Cannot allocate IP for 08:00:27:00:00:03 on line 3. Insufficient IP space in range: 192.168.1.0/31
-address out of range```
+address out of range
+```
