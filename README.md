@@ -6,9 +6,8 @@ For testing purposes we often need to create hardware_data files with realistic 
 
 The script expects the following parameters
 1. gateway (e.g. 192.168.1.1)
-2. netmask (e.g. 255.255.255.0)
-3. CIDR string (e.g. 192.168.1.0/28)
-4. MAC address file (A file containing MAC addresses separated by newlines)
+2. CIDR string (e.g. 192.168.1.0/28)
+3. MAC address file (A file containing MAC addresses separated by newlines)
 
 Use this to pipe each hardware_json into a separate file:
 
@@ -17,7 +16,7 @@ Use this to pipe each hardware_json into a separate file:
 `mkdir output_files`
 
 
-`python3 ./write_hardware_jsons.py 192.168.1.1 255.255.255.0 192.168.1.0/28 ./MACS.txt | split -l 30 - ./output_files/hardware_data-`
+`python3 ./write_hardware_jsons.py 192.168.1.1 192.168.1.0/28 ./MACS.txt | split -l 30 - ./output_files/hardware_data-`
 
 # NOTES
 1. It will drop out gracefully if you have more MACs in the input file than can fit in the IP space given by the CIDR as you can see in the second example
@@ -28,12 +27,12 @@ _The repository contains an example input file called MACs.txt_
 
 - Example input with enough IP space to create all hardware_jsons
 
-`python3 ./write_hardware_jsons.py 192.168.1.1 255.255.255.0 192.168.1.0/28 ./MACS.txt`
+`python3 ./write_hardware_jsons.py 192.168.1.1 192.168.1.0/28 ./MACS.txt`
 
 - Output
 
 `{
-  "id": "09a71298-9013-4234-ae39-ffbdb07fadb8",
+  "id": "0dd32a37-7c94-430d-abbe-18ae6686e5cf",
   "metadata": {
     "facility": {
       "facility_code": "onprem"
@@ -49,7 +48,7 @@ _The repository contains an example input file called MACs.txt_
           "ip": {
             "address": "192.168.1.0",
             "gateway": "192.168.1.1",
-            "netmask": "255.255.255.248"
+            "netmask": "255.255.255.240"
           },
           "mac": "08:00:27:00:00:01",
           "uefi": false
@@ -63,7 +62,7 @@ _The repository contains an example input file called MACs.txt_
   }
 }
 {
-  "id": "9ef29ed1-f1ab-4f22-bee2-06f63f1f63da",
+  "id": "92cfcdec-8979-457b-bccb-ed68910b7005",
   "metadata": {
     "facility": {
       "facility_code": "onprem"
@@ -79,7 +78,7 @@ _The repository contains an example input file called MACs.txt_
           "ip": {
             "address": "192.168.1.1",
             "gateway": "192.168.1.1",
-            "netmask": "255.255.255.248"
+            "netmask": "255.255.255.240"
           },
           "mac": "08:00:27:00:00:02",
           "uefi": false
@@ -93,7 +92,7 @@ _The repository contains an example input file called MACs.txt_
   }
 }
 {
-  "id": "7b140a22-0707-4a27-b76c-0977bedecfac",
+  "id": "d902cd80-8e9c-427e-8f80-810dfb1b7049",
   "metadata": {
     "facility": {
       "facility_code": "onprem"
@@ -109,7 +108,7 @@ _The repository contains an example input file called MACs.txt_
           "ip": {
             "address": "192.168.1.2",
             "gateway": "192.168.1.1",
-            "netmask": "255.255.255.248"
+            "netmask": "255.255.255.240"
           },
           "mac": "08:00:27:00:00:03",
           "uefi": false
@@ -123,7 +122,7 @@ _The repository contains an example input file called MACs.txt_
   }
 }
 {
-  "id": "d266f961-8a74-457d-aa69-24c97cc1c681",
+  "id": "011d1291-9aea-4ffb-b67a-c0ede3ca4908",
   "metadata": {
     "facility": {
       "facility_code": "onprem"
@@ -139,7 +138,7 @@ _The repository contains an example input file called MACs.txt_
           "ip": {
             "address": "192.168.1.3",
             "gateway": "192.168.1.1",
-            "netmask": "255.255.255.248"
+            "netmask": "255.255.255.240"
           },
           "mac": "08:00:27:00:00:04",
           "uefi": false
@@ -153,7 +152,7 @@ _The repository contains an example input file called MACs.txt_
   }
 }
 {
-  "id": "0993606b-31bb-4046-b1a8-6b06e4c2ab93",
+  "id": "a820ed64-c946-4bf4-8216-a6a08ee58154",
   "metadata": {
     "facility": {
       "facility_code": "onprem"
@@ -169,7 +168,7 @@ _The repository contains an example input file called MACs.txt_
           "ip": {
             "address": "192.168.1.4",
             "gateway": "192.168.1.1",
-            "netmask": "255.255.255.248"
+            "netmask": "255.255.255.240"
           },
           "mac": "08:00:27:00:00:05",
           "uefi": false
@@ -185,12 +184,12 @@ _The repository contains an example input file called MACs.txt_
 
 - Example input without enough IP space to create all hardware_jsons
 
-` ./write_hardware_jsons.py 192.168.1.1 255.255.255.248 192.168.1.0/31 ./MACS.txt`
+`python3 ./write_hardware_jsons.py 192.168.1.1 192.168.1.0/31 ./MACS.txt`
 
 - Output
 
 `{
-  "id": "87ab4e23-734b-444f-aaf2-bba0d637dd00",
+  "id": "1654a1f1-aa57-4574-9c3e-b743b2f52a24",
   "metadata": {
     "facility": {
       "facility_code": "onprem"
@@ -206,7 +205,7 @@ _The repository contains an example input file called MACs.txt_
           "ip": {
             "address": "192.168.1.0",
             "gateway": "192.168.1.1",
-            "netmask": "255.255.255.248"
+            "netmask": "255.255.255.254"
           },
           "mac": "08:00:27:00:00:01",
           "uefi": false
@@ -220,7 +219,7 @@ _The repository contains an example input file called MACs.txt_
   }
 }
 {
-  "id": "92db9ce7-1025-49f9-826b-478c789f3fcb",
+  "id": "665ac5c8-a334-43ac-9432-16bab653919c",
   "metadata": {
     "facility": {
       "facility_code": "onprem"
@@ -236,7 +235,7 @@ _The repository contains an example input file called MACs.txt_
           "ip": {
             "address": "192.168.1.1",
             "gateway": "192.168.1.1",
-            "netmask": "255.255.255.248"
+            "netmask": "255.255.255.254"
           },
           "mac": "08:00:27:00:00:02",
           "uefi": false

@@ -58,28 +58,27 @@ def main():
 
     # Command line arguments
     # 1. gateway
-    # 2. netmask
-    # 3. CIDR string
-    # 4. MAC address file
+    # 2. CIDR string
+    # 3. MAC address file
 
     # Parse command line arguments
-    NUM_CMD_LINE_ARGUMENTS = 4
+    NUM_CMD_LINE_ARGUMENTS = 3
 
     if((len(sys.argv) - 1) != NUM_CMD_LINE_ARGUMENTS):
         print('Invalid command line argument') # TODO Print help here
         exit(1)
     else:
         gateway                 = sys.argv[1]
-        netmask                 = sys.argv[2]
-        CIDR_string             = sys.argv[3]
-        MAC_address_file_path   = sys.argv[4]        
+        CIDR_string             = sys.argv[2]
+        MAC_address_file_path   = sys.argv[3]        
 
     # Create CIDR object and check it is valid else exit
     try:
         CIDR = ipaddress.ip_network(CIDR_string)
+        netmask = str(ipaddress.IPv4Network(CIDR).netmask)
     except ValueError:
         print('Invalid CIDR: %s Did you set the host bits?' % CIDR_string)
-        exit(1)
+        exit(1)    
 
     # Read MACs from input file to list
     f = open(MAC_address_file_path, "r", encoding="utf-8")
